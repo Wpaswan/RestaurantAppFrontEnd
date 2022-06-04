@@ -1,0 +1,61 @@
+<div class="section" fxLayout="row" fxLayoutAlign="center center">
+   
+    <mat-card class="matcard1">
+        <div>
+             <img class="img1" src="../../assets/Shopping2.jpg" alt="">
+        
+        </div>
+        <div class="text">
+         ONLINEFOODSHOPPING
+     </div>
+    </mat-card> 
+     
+    <mat-card class="matcard2" fxLayout="row" fxLayoutAlign="center center">
+       
+ 
+     
+ 
+ <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+     <div class="form">
+         
+     <h3 style="margin-bottom: 50px;margin-left:80px;font-size:large;font-weight: bold;color:blue;">Customer Login</h3>
+     <div class="email">
+         <div>
+             <mat-label>Email Id</mat-label>
+         </div>
+         <div>
+             <mat-form-field appearance="outline">
+ 
+                 <input type="text" formControlName="email" style="background-color: greenyellow;" matInput placeholder="">
+                 <mat-error>Enter an email address</mat-error>
+             </mat-form-field>
+ 
+         </div>
+ 
+     </div>
+     <div class="password">
+         <div>
+             <mat-label>Password</mat-label>
+         </div>
+         <div>
+             <mat-form-field appearance="outline">
+ 
+                 <input type="text"  formControlName="password" style="background-color: greenyellow;" matInput placeholder="">
+                 <mat-error>Enter a password</mat-error>
+             </mat-form-field>
+ 
+         </div>
+ 
+     </div>
+    
+     <div>
+         <button class="signupbutton" mat-flat-button>Login</button>
+     </div>
+     <div>
+         <button class="signIn" mat-flat-button routerLink="/sign-up">Signup Instead</button>
+     </div>
+    
+     </div>
+ </form>
+ </mat-card>
+ </div>

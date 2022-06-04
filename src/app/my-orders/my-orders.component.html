@@ -1,0 +1,25 @@
+<div class="containers" fxLayout="row" fxFlexAlign="center center">
+ 
+    <div  class="orders" *ngFor="let orders of myOrders">
+        
+        <div>
+            <img class="image" src="{{orders.item.image}}" alt="">
+        </div>
+        <div class="bookname">
+           Item: {{orders.item.itemName}}
+        </div>
+        <div class="author">
+            Rs. {{orders.item.itemPrice}}
+        </div>
+        <div>
+            Quantities:{{orders.quantity}}
+        </div>
+        <div>
+            PaymentMethod:{{orders.pMethod}}
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <button mat-raised-button class="Remove" (click)="deleteOrder(orders)">Remove Order</button>
+        </div>
+
+    </div>
+</div>

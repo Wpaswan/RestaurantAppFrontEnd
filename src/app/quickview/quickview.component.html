@@ -1,0 +1,79 @@
+<div fxLayout="row" fxLayoutAlign="center start" fxLayout.xs="row" style=" background-image: url(../../assets/Shopping2.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+;height: 100%;" fxFlex.xs="95" fxLayout.xs="column">
+
+
+    <div class="imageandbutton" fxLayout="column">
+
+        <div class="bigimage" fxLayout="row">
+            <div class="big1">
+                <img class="image1" src="{{itemdata?.image}}">
+                <div style="background-color: orange;">
+                    <label>
+                        Item: {{itemdata?.itemName}}</label><br>
+                    <label>
+
+                        Rs. {{itemdata?.itemPrice}}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="cartandwishlistbutton" fxLayout="row" fxLayoutGap="40px" fxLayoutAlign="space-between center">
+            <div>
+
+
+                <form style="margin-top: 30px;background-color: orange;" [formGroup]="orderForm"
+                    (ngSubmit)="onSubmit()">
+                    <label>Quantity</label>
+                    <input type="number" style="margin-left: 56px;background-color: orange;border-color: orange;"
+                        formControlName="quantity"><br>
+                    <label>PaymentMethod</label>
+                    <input type="text" formControlName="pMethod"
+                        style="background-color: orange;margin-left: 6px;border-color: orange;">
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <button mat-raised-button class="addtobag">Place Order</button>
+                    </div>
+                </form>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <form [formGroup]="addressForm" (ngSubmit)="AddAddress()">
+        <div class="bookdetailsdiv" fxLayout="column">
+
+
+
+
+            <div fxLayout="column" style="background-color: orange;" class="conainer">
+                <h2 style="margin-top: 20px;margin-left:60px">Add Address</h2>
+                <img class="image2" src="../../assets/house1.jpg">
+                <div class="element">
+                    <label>Colony</label>
+                    <input type="text" style="margin-left: 8px;background-color: orange;" formControlName="colony">
+                </div>
+                <div class="element">
+                    <label>Pin</label>
+                    <input type="text" style="margin-left: 28px;background-color: orange;"
+                        formControlName="quarterNumber">
+                </div>
+                <div class="element">
+                    <label>City</label>
+                    <input type="text" style="margin-left: 26px;background-color: orange;" formControlName="city">
+                </div>
+                <div class="element">
+                    <label>State</label>
+                    <input type="text" style="margin-left: 18px;background-color: orange;" formControlName="state">
+                </div>
+                <div fxLayout="row" fxLayoutAlign=" center" style="margin-top:27px ;">
+                    <button mat-raised-button class="addtobag">Add Address</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

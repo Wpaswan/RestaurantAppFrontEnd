@@ -1,0 +1,29 @@
+<div style="width: 100%; height: 100%;" >
+    <mat-toolbar class="tool" fxLayout="row" fxLayoutAlign="space-between center" >
+        <div  class="titleText" fxLayout="row" fxLayoutGap="2%"  >
+            <img class="image" src="../../assets/Shopping2.jpg" />
+            <h1 style="color: white;">OrderFoodStuffs</h1>
+            </div>
+            <mat-card class="search-mat-card" fxLayout="row"fxLayoutAlign="space-around center" >
+                <button mat-icon-button  >
+                  <mat-icon class="searchIcon" >search</mat-icon>
+                </button>
+                <input  class="searchInput"   type="text" name="search" placeholder="Search.." #search  (keyup)="clearFilter(search.value)"/>
+                <!-- <input class="searchInput" type="text" name="search" placeholder="Search" #search
+                    (keyup)="clearFilter(search.value)" fxHide.xs fxHide.sm> -->
+              </mat-card>
+              <button class="cart" mat-icon-button    matTooltip="Cart" (click)="getMyOrders()">My Orders<mat-icon >shopping_cart</mat-icon></button>
+              <button class="Menu" class="pro" mat-button [matMenuTriggerFor]="menu" >Profile
+                <mat-icon class="searchIcon" >perm_identity</mat-icon></button> 
+                <mat-menu #menu="matMenu" >
+                    <h3 style="text-align:center">Welcome!</h3>
+                    <p>To access account and manage orders</p>
+                    <button mat-menu-item >
+                      <div style="text-align:center">
+                        <button mat-button class="login" (click)="Logout()">Logout</button>
+                       </div>
+                    </button>
+                </mat-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>
